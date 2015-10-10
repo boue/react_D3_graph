@@ -4,8 +4,12 @@ var d3    = require('d3');
 var App = React.createClass({
   render: function(){
     return <h1>Hello, World!</h1>
-  }
+  },
 
+  //will be called before the initial rendering of the component occurs
+  //creating 50 random X-Y coordinates with a certain random range using D3's range method
+  //Since numDataPoints is set to 50, then array of values from 0 up to 49
+  //It's like a for loop but d3 range method works nice
   componentWillMount: function(){
     this.randomizeData();
   },
@@ -21,6 +25,15 @@ var App = React.createClass({
   }
 });
 
-
+var settings = {
+  width: 500,
+  height: 300,
+  padding: 30,
+  numDataPoints: 50,
+  maxRange: function(){
+    return Math.random() * 1000
+  }
+};
 
 module.exports = App;
+
