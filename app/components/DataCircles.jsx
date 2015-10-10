@@ -19,7 +19,7 @@ var DataCircles = React.createClass({
       //I'm using node-uuid because it's an easy way to create a unique key for each element
       key: uuid.v4()
     };
-    
+
     return (
       <circle {...props}>
       </circle>
