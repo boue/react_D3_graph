@@ -1,4 +1,4 @@
-//var css   = require('./main.css');
+var css   = require('./main.css');
 var React = require('react');
 var App   = require('./components/App.jsx');
 
