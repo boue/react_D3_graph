@@ -1,5 +1,5 @@
 var React = require('react');
-var App = require('./components/App');
+var App = require('./components/Ap'p);
 var css = require('./main.css');
 
 var appNode = document.createElement('div');
