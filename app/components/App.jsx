@@ -1,9 +1,18 @@
 var React = require('react');
 var d3    = require('d3');
+var ScatterPlot = require('./ScatterPlot.jsx');
 
 var App = React.createClass({
   render: function(){
-    return <h1>Hello, World!</h1>
+    return (
+      <div>
+        <h1>React and D3 are best buds</h1>
+        <ScatterPlot data={this.state.data} {...settings} />
+        <div className="controls">
+          <button className={'btn randomize'} onClick={this.randomizeData}>Randomize Data</button>
+        </div> 
+      </div>
+    );
   },
 
   //will be called before the initial rendering of the component occurs
