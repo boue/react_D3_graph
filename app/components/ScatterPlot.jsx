@@ -1,14 +1,13 @@
-var React = require('react');
+var React       = require('react');
 var DataCircles = require('./DataCircles');
-
-var XYAxis = require('./XYAxis');
+var XYAxis      = require('./XYAxis');
 
 var ScatterPlot = React.createClass({
-  render: function(){
+  render: function() {
     var props = this.props;
     var xScale = this.getXScale(props);
     var yScale = this.getYScale(props);
-    return(
+    return (
       <svg width={props.width} height={props.height}>
         <DataCircles
           xScale={xScale}
@@ -22,19 +21,18 @@ var ScatterPlot = React.createClass({
     );
   },
 
-  getXScale: function(props){
-    //d3.max is a d3 method for determining the maximum value of a dataset.
+  getXScale: function(props) {
     var xMax = d3.max(props.data, function(d) { return d[0] });
     return d3.scale.linear()
       .domain([0, xMax])
       .range([props.padding, props.width - props.padding * 2]);
   },
 
-  getYScale: function(props){
+  getYScale: function(props) {
     var yMax = d3.max(props.data, function(d) { return d[1] });
-        return d3.scale.linear()
-          .domain([0, yMax])
-          .range([props.height - props.padding, props.padding]);
+    return d3.scale.linear()
+      .domain([0, yMax])
+      .range([props.height - props.padding, props.padding]);
   },
 });
 
